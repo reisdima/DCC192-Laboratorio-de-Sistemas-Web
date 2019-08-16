@@ -37,26 +37,27 @@ public class s1 extends HttpServlet {
         
         String u_nome = request.getParameter("nome");
         String u_senha = request.getParameter("senha");
-        String resultado = null;
         if(login.equals(u_nome) && senha.equals(u_senha)){
-            resultado = "Senha correta";
+            request.getRequestDispatcher("menu.jsp").forward(request, response);
         }else{
-            resultado = "Senha incorreta";
+            // incluir o atributo erro no objeto session
+            request.getSession().setAttribute("erro", "senha errada");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
         
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet s1</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>" + resultado + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+//        try (PrintWriter out = response.getWriter()) {
+//            /* TODO output your page here. You may use following sample code. */
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet s1</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("<h1>" + resultado+  "</h1>");
+//            out.println("</body>");
+//            out.println("</html>");
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

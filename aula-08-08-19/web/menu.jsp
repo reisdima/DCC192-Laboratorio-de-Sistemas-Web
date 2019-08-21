@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <button>Voltar</button>
+        <button><a href="login.jsp">Voltar</a></button>
+        
     </body>
 </html>

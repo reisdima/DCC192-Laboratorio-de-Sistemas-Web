@@ -15,7 +15,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-    %<= new Date()%>; 
+        <% if(session.getAttribute("erro") != null){%>
+        <p> <%= session.getAttribute("erro") %>
+            <% session.removeAttribute("erro");%>
+        <%}%>
     <center>
         <h1>Tela de Login</h1>
         <form method=POST ACTION='s1'>

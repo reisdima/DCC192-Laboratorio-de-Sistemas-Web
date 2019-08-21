@@ -14,7 +14,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    <style>
+        .tempo{
+            position: absolute;
+            right: 20px;
+            
+        }
+    </style>
     <body>
+        <div class="tempo">
+            <%= new Date() %>
+        </div>
         <% if(session.getAttribute("erro") != null){%>
         <p> <%= session.getAttribute("erro") %>
             <% session.removeAttribute("erro");%>

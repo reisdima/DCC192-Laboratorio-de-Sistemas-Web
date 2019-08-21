@@ -11,8 +11,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <style>
+        button{
+            position: absolute;
+            left: 50%;
+            border: solid 1px black;
+            text-align: center; 
+       }
+    </style>
     <body>
-        <button><a href="login.jsp">Voltar</a></button>
         
+        <form metho="POST" action='s1'>
+            <button>Voltar</button>
+        </form>
+            
     </body>
 </html>
